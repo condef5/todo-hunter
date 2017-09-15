@@ -8,9 +8,9 @@ import './styles/app.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 render(
-	<Provider store={store}>
-		<App />
-	</Provider>, 
-	document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  document.getElementById('root')
 )
 registerServiceWorker()
