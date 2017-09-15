@@ -29,5 +29,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "condef5.github.io/todo-hunter" 
+  "homepage": "https://condef5.github.io/todo-hunter/" 
 }
