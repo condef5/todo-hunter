@@ -13,29 +13,29 @@ const TodosViewMain = ({ isBusy }) => (
  )
 
 const TodosViewFooter = () => (
-	<footer id="todos-view-footer">
-		Development by devAcademy.
-	</footer>
+  <footer id="todos-view-footer">
+    Development by devAcademy.
+  </footer>
 ) 
  
 class TodosView extends Component {
-	componentWillMount(){
+  componentWillMount(){
     this.props.fetchTodos()
   }
   render(){
-  	const { isBusy, isCreating, createTodo, currentFilter, availableFilters, setFilter} = this.props
+    const { isBusy, isCreating, createTodo, currentFilter, availableFilters, setFilter} = this.props
     return(
-			<div className="todos-view"> 
-				<TodosViewHeader  
-					isCreating={isCreating}
-	        createTodo={createTodo}
-	        currentFilter={currentFilter}
-	        filters={availableFilters}
-	        setFilter={setFilter}
-				/>
-			  <TodosViewMain isBusy={isBusy} />
-			  <TodosViewFooter />
-			</div> 
+      <div className="todos-view"> 
+        <TodosViewHeader  
+          isCreating={isCreating}
+          createTodo={createTodo}
+          currentFilter={currentFilter}
+          filters={availableFilters}
+          setFilter={setFilter}
+        />
+        <TodosViewMain isBusy={isBusy} />
+        <TodosViewFooter />
+      </div> 
     )
   }
 } 

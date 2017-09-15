@@ -59,7 +59,7 @@ class TodoItem extends Component {
     })
     return(
       <li className={todoClass} key={id} onClick={this._onClickTodo}> 
-				<section className="left">
+        <section className="left">
           {updating
             ? (
               <BounceLoader
@@ -85,7 +85,7 @@ class TodoItem extends Component {
           >  
             {titulo}
           </div>
-				</section>
+        </section>
         {deleting
           ? (
             <BounceLoader
