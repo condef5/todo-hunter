@@ -6,8 +6,8 @@ import promiseMiddleware from 'redux-promise-middleware'
 
 import rootReducer from './reducers'
 
-const middleware = composeWithDevTools(applyMiddleware(promiseMiddleware(),thunk));
+const middleware = composeWithDevTools(applyMiddleware(promiseMiddleware(),thunk))
 
-const store = createStore(rootReducer, middleware );
+const store = createStore(rootReducer, middleware )
 
-export default store;
+export default store
