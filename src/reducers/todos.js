@@ -94,11 +94,13 @@ export default combineReducers({
   selectedTodoId 
 })
 
-// Funciones que sirven como helpers para acceder al state
+// PUBLIC HELPER FUNCIONS
 
-export function getAllTodos({ todos, updating, deleting }) {
-  return putProcessingStatus(todos, updating, deleting)
+export function getAllTodos({ todos, updating, deleting }, { filter }) {
+  const filteredTodos = filterTodos(todos, filter)
+  return putProcessingStatus(filteredTodos, updating, deleting)
 }
+
 
 export function getSelectedTodo({ todos, selectedTodoId }) {
   return todos.find(todo => todo.id === selectedTodoId)
@@ -110,4 +112,17 @@ export function getFetchingStatus({ isFetching }) {
 
 export function getCreatingStatus({ isCreating }) {
   return isCreating
+}
+
+/*  PRIVATE HELPER FUNCTIONS */
+
+function filterTodos(todos, filter) {
+  switch (filter) {
+    case 'COMPLETED':
+      return todos.filter(todo => todo.activo)
+    case 'ACTIVE':
+      return todos.filter(todo => !todo.activo)
+    default:
+      return todos
+  }
 }

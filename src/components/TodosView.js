@@ -23,10 +23,16 @@ class TodosView extends Component {
     this.props.fetchTodos()
   }
   render(){
-  	const { isBusy, createTodo, isCreating} = this.props
+  	const { isBusy, isCreating, createTodo, currentFilter, availableFilters, setFilter} = this.props
     return(
 			<div className="todos-view"> 
-				<TodosViewHeader createTodo={createTodo} isCreating={isCreating} />
+				<TodosViewHeader  
+					isCreating={isCreating}
+	        createTodo={createTodo}
+	        currentFilter={currentFilter}
+	        filters={availableFilters}
+	        setFilter={setFilter}
+				/>
 			  <TodosViewMain isBusy={isBusy} />
 			  <TodosViewFooter />
 			</div> 
