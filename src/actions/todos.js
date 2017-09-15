@@ -6,7 +6,7 @@ export function fetchTodos() {
   return {
     type: 'FETCH_TODOS',
     payload: axios.get(baseUrl)
-              .then(response => ({todos : response.data}) )
+      .then(response => ({todos : response.data}) )
   } 
 }
 
@@ -14,10 +14,10 @@ export function createTodo(todo) {
   return {
     type: 'CREATE_TODO',
     payload: axios.post(baseUrl,todo)
-              .then(response => ({ todo: response.data  }))
-              .catch(function (error) {
-                console.log(error);
-              })
+      .then(response => ({ todo: response.data  }))
+      .catch(function (error) {
+        console.log(error);
+      })
     }
 }
 export function updateTodo(todo) {

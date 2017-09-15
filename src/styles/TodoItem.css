@@ -5,9 +5,7 @@
   border: 1px solid #dfe4ec;
   border-radius: 2px;
   background-color: #fff;
-  transition: background-color 350ms ease,
-    border-color 150ms ease;
-
+  transition: background-color 350ms ease, border-color 150ms ease;
   animation-duration: 600ms;
 }
 

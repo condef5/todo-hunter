@@ -25,7 +25,6 @@ function isCreating(state = false, action) {
   }
 }
 
-
 function todos(state = [] , action) {
   switch(action.type) { 
     case "FETCH_TODOS_FULFILLED":

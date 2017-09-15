@@ -6,10 +6,12 @@ import '../styles/TodosViewFooter.css'
 
 const TodosViewMain = ({ isBusy }) => (
   <div id="todos-view-main">
-    {isBusy
+    {
+      isBusy
       ? <Loading color="#5dcff3" />
-      : <TodoListContainer />}
-    </div>
+      : <TodoListContainer />
+    }
+  </div>
  )
 
 const TodosViewFooter = () => (
