@@ -11,14 +11,17 @@ export function fetchTodos() {
 }
 
 export function createTodo(todo) {
-  return {
-    type: 'CREATE_TODO',
-    payload: axios.post(baseUrl,todo)
-      .then(response => ({ todo: response.data  }))
-      .catch(function (error) {
-        console.log(error);
+  return function(dispatch) {
+    dispatch({type: "CREATE_TODO_PENDING"}); 
+    axios.post(baseUrl, todo)
+      .then((response) => {
+        dispatch({type: "CREATE_TODO_FULFILLED", payload: {todo: response.data}})
+        dispatch(selectTodo(response.data.id)); 
       })
-    }
+      .catch((err) => {
+        dispatch({type: "CREATE_TODO_REJECTED", payload: err})
+      })
+  } 
 }
 export function updateTodo(todo) {
   return function(dispatch) {
