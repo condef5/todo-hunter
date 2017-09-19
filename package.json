@@ -6,13 +6,16 @@
     "animate.css": "^3.5.2",
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
+    "enzyme": "^2.9.1",
     "font-awesome": "^4.7.0",
     "gh-pages": "^1.0.0",
     "halogen": "^0.2.0",
     "react": "^15.6.1",
+    "react-addons-test-utils": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-select": "^1.0.0-rc.10",
+    "react-test-renderer": "^15.6.1",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
@@ -29,5 +32,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://condef5.github.io/todo-hunter/" 
+  "homepage": "https://condef5.github.io/todo-hunter/"
 }

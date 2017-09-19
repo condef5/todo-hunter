@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList component renders the todo correctly renders correctly 1`] = `
+<li
+  className="todo-item animated"
+  onClick={[Function]}
+>
+  <section
+    className="left"
+  >
+    <input
+      checked={false}
+      disabled={undefined}
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="title"
+      contentEditable={false}
+      onBlur={[Function]}
+      onKeyPress={[Function]}
+      spellCheck={false}
+    >
+      Soy un todo
+    </div>
+  </section>
+  <div
+    className="delete-icon"
+    onClick={[Function]}
+  >
+    <i
+      aria-hidden="true"
+      className="fa fa-times"
+    />
+  </div>
+</li>
+`;
