@@ -1,0 +1,26 @@
+body {
+	font-family: 'PT Sans', sans-serif;
+	font-smoothing: antialiased;
+	margin: 0; 
+}  
+
+h1,h2,h3,h4,h5{
+	margin: 0;
+}
+.title:focus{
+	outline: none;
+}
+
+.todos-view {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#todos-view-main{
+  flex: 1;
+  padding: 20px 15px;
+  background-color: #f9fafc;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

@@ -3,9 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.5.2",
+    "axios": "^0.16.2",
+    "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^1.0.0",
+    "halogen": "^0.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
+    "react-select": "^1.0.0-rc.10",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.4.1",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
@@ -14,7 +25,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "yarn build && gh-pages -d ./build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "homepage": "https://condef5.github.io/todo-hunter/" 
 }
