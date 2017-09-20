@@ -11,3 +11,8 @@ Este projecto ha sido desarrollado usando las siguientes tecnologías:
 # Demo
 
 Demo disponible [aqui](https://condef5.github.io/todo-hunter/)
+
+# Deploy with Docker
+
+Ejecutar desde la consola: `docker run -p 80:80 -d --name hunter-static condef5/todo-hunter`
+
