@@ -1,0 +1,13 @@
+# Image from node with yarn include
+FROM node:7.10 as build-deps
+ 
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Copiamos el package.json
+COPY package.json yarn.lock ./
+
+# Instalamos las despendencias
+RUN yarn install
+
+ 
