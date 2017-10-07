@@ -17,17 +17,15 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0"
-  },
-  "devDependencies": {
+    "redux-thunk": "^2.2.0",
     "react-scripts": "1.0.13"
-  },
+  }, 
   "scripts": {
     "start": "react-scripts start",
+    "move-new-build": "cp -r build/. /usr/share/nginx/html",
     "build": "react-scripts build",
     "deploy": "yarn build && gh-pages -d ./build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "homepage": "https://condef5.github.io/todo-hunter/" 
+  }
 }
