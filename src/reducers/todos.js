@@ -1,37 +1,37 @@
 import { combineReducers } from 'redux'
 import { putProcessingStatus } from './helpers'
 
-function isFetching(state = false, action) {
+export function isFetching(state = false, action) {
   switch (action.type) {
-    case "FETCH_TODOS_PENDING":
+    case "FETCH_TODOS_REQUEST":
       return true
-    case "FETCH_TODOS_REJECTED":
-    case "FETCH_TODOS_FULFILLED":
+    case "FETCH_TODOS_FAILURE":
+    case "FETCH_TODOS_SUCCESS":
       return false
     default:
       return state
   }
 }
 
-function isCreating(state = false, action) {
+export function isCreating(state = false, action) {
   switch (action.type) {
-    case 'CREATE_TODO_PENDING':
+    case 'CREATE_TODO_REQUEST':
       return true
-    case 'CREATE_TODO_REJECTED':
-    case 'CREATE_TODO_FULFILLED':
+    case 'CREATE_TODO_FAILURE':
+    case 'CREATE_TODO_SUCCESS':
       return false
     default:
       return state
   }
 }
 
-function todos(state = [] , action) {
+export function todos(state = [] , action) {
   switch(action.type) { 
-    case "FETCH_TODOS_FULFILLED":
+    case "FETCH_TODOS_SUCCESS":
       return action.payload.todos
-    case 'CREATE_TODO_FULFILLED':
+    case 'CREATE_TODO_SUCCESS':
       return [action.payload.todo, ...state]
-    case 'UPDATE_TODO_FULFILLED': 
+    case 'UPDATE_TODO_SUCCESS': 
       const { todo } = action.payload
       return state.map(_todo => {
         if (_todo.id === todo.id) {
@@ -39,7 +39,7 @@ function todos(state = [] , action) {
         }
         return _todo
       }) 
-    case 'DELETE_TODO_FULFILLED':
+    case 'DELETE_TODO_SUCCESS':
       return state.filter(todo =>
         todo.id !== action.payload.id
       )
@@ -48,25 +48,25 @@ function todos(state = [] , action) {
   }
 } 
 
-function updating(state = [], action) {
+export function updating(state = [], action) {
   switch(action.type) {
-    case 'UPDATE_TODO_PENDING':
+    case 'UPDATE_TODO_REQUEST':
       return [...state, action.payload.id]
-    case 'UPDATE_TODO_REJECTED':
+    case 'UPDATE_TODO_FAILURE':
       return state.filter(id => id !== action.payload.id)
-    case 'UPDATE_TODO_FULFILLED':
+    case 'UPDATE_TODO_SUCCESS':
       return state.filter(id => id !== action.payload.todo.id)
     default:
       return state
   }
 }
 
-function deleting(state = [], action) {
+export function deleting(state = [], action) {
   switch(action.type) {
-    case 'DELETE_TODO_PENDING':
+    case 'DELETE_TODO_REQUEST':
       return [...state, action.payload.id]
-    case 'DELETE_TODO_REJECTED':
-    case 'DELETE_TODO_FULFILLED': 
+    case 'DELETE_TODO_FAILURE':
+    case 'DELETE_TODO_SUCCESS': 
       return state.filter(id => id !== action.payload.id)
     default: 
       return state
@@ -77,7 +77,7 @@ function selectedTodoId(state = 0, action) {
   switch(action.type) {
     case 'SELECT_TODO':
       return action.payload.id
-    case 'DELETE_TODO_FULFILLED':
+    case 'DELETE_TODO_SUCCESS':
       return state === action.payload.id ? 0 : state
     default:
       return state
