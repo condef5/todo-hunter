@@ -16,7 +16,7 @@ const TodosViewMain = ({ isBusy }) => (
 
 const TodosViewFooter = () => (
   <footer id="todos-view-footer">
-    Development by devAcademy.
+    Development by drupvon.
   </footer>
 ) 
  

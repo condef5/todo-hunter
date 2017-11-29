@@ -1,0 +1,22 @@
+engines:
+  eslint:
+    enabled: true
+    checks:
+      import/no-extraneous-dependencies:
+        enabled: false
+      import/no-duplicates:
+        enabled: false
+      import/no-absolute-path:
+        enabled: false
+      import/no-named-as-default:
+        enabled: false
+      import/no-named-as-default-member:
+        enabled: false
+  scss-lint:
+    enabled: true
+ratings:
+  paths:
+  - src/**
+exclude_paths:
+- "src/stylesheets/vendor/**/*"
+- "public/**"

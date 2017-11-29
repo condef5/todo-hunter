@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'https://crud-in-rails-api.herokuapp.com/api/tareas'
+const baseUrl = 'https://drupvon-crud.herokuapp.com/api/tareas'
 
 export function fetchTodos() { 
   return function(dispatch) {
